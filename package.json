@@ -12,6 +12,7 @@
     "react-dom": "latest",
     "tailwindcss": "latest",
     "autoprefixer": "latest",
-    "postcss": "latest"
+    "postcss": "latest",
+    "lucide-react": "latest"
   }
 }
