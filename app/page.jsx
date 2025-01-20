@@ -19,7 +19,7 @@ const SUPPORTED_CURRENCIES = [
 ];
 
 export default function AdvancedCryptoConverter() {
-  const [values, setValues] = useState({ satoshi: "", bitcoin: "", usd: "" });
+  const [values, setValues] = useState({ satoshi: "", bitcoin: "", currencyValue: "" });
   const [exchangeRate, setExchangeRate] = useState(0);
   const [currency, setCurrency] = useState("usd");
   const [lastUpdated, setLastUpdated] = useState(null);
@@ -45,29 +45,23 @@ export default function AdvancedCryptoConverter() {
     return () => clearInterval(interval);
   }, [fetchExchangeRate]);
 
-  const handleChange = (currencyType, value) => {
-    const numValue = Number.parseFloat(value);
-    const newValues = { ...values, [currencyType]: value };
+  const handleChange = (field, value) => {
+    const numValue = parseFloat(value) || 0;
+    const updatedValues = { ...values, [field]: value };
 
-    if (!isNaN(numValue)) {
-      switch (currencyType) {
-        case "satoshi":
-          newValues.bitcoin = (numValue / SATOSHI_PER_BTC).toFixed(8);
-          newValues[currency] = ((numValue / SATOSHI_PER_BTC) * exchangeRate).toFixed(2);
-          break;
-        case "bitcoin":
-          newValues.satoshi = Math.floor(numValue * SATOSHI_PER_BTC).toString();
-          newValues[currency] = (numValue * exchangeRate).toFixed(2);
-          break;
-        case currency:
-          const btc = numValue / exchangeRate;
-          newValues.bitcoin = btc.toFixed(8);
-          newValues.satoshi = Math.floor(btc * SATOSHI_PER_BTC).toString();
-          break;
-      }
+    if (field === "satoshi") {
+      updatedValues.bitcoin = (numValue / SATOSHI_PER_BTC).toFixed(8);
+      updatedValues.currencyValue = ((numValue / SATOSHI_PER_BTC) * exchangeRate).toFixed(2);
+    } else if (field === "bitcoin") {
+      updatedValues.satoshi = Math.floor(numValue * SATOSHI_PER_BTC).toString();
+      updatedValues.currencyValue = (numValue * exchangeRate).toFixed(2);
+    } else if (field === "currencyValue") {
+      const btc = numValue / exchangeRate;
+      updatedValues.bitcoin = btc.toFixed(8);
+      updatedValues.satoshi = Math.floor(btc * SATOSHI_PER_BTC).toString();
     }
 
-    setValues(newValues);
+    setValues(updatedValues);
   };
 
   return (
@@ -75,26 +69,23 @@ export default function AdvancedCryptoConverter() {
       <div className="w-full max-w-md backdrop-blur-lg bg-white bg-opacity-20 rounded-3xl shadow-2xl overflow-hidden">
         <div className="p-8">
           <h1 className="text-4xl font-bold text-white mb-2">Crypto Converter</h1>
-          <p className="text-white text-opacity-80 mb-6">Convert between Satoshi, Bitcoin, and other currencies</p>
+          <p className="text-white text-opacity-80 mb-6">Convert between Satoshi, Bitcoin, and currencies</p>
 
-          {["satoshi", "bitcoin", currency].map((currencyType) => (
-            <div key={currencyType} className="mb-6 relative">
-              <label
-                htmlFor={currencyType}
-                className="block text-sm font-medium text-white mb-2 capitalize"
-              >
-                {currencyType === currency ? currency.toUpperCase() : currencyType}
+          {["satoshi", "bitcoin", "currencyValue"].map((field, index) => (
+            <div key={field} className="mb-6 relative">
+              <label htmlFor={field} className="block text-sm font-medium text-white mb-2">
+                {field === "currencyValue" ? currency.toUpperCase() : field.charAt(0).toUpperCase() + field.slice(1)}
               </label>
               <input
-                id={currencyType}
+                id={field}
                 type="number"
-                value={values[currencyType]}
-                onChange={(e) => handleChange(currencyType, e.target.value)}
-                placeholder={`Enter ${currencyType} amount`}
+                value={values[field]}
+                onChange={(e) => handleChange(field, e.target.value)}
+                placeholder={`Enter ${field}`}
                 className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-white placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
               />
               <div className="absolute right-3 top-10 text-white text-opacity-50">
-                {currencyType === currency ? currency.toUpperCase() : currencyType.toUpperCase()}
+                {field === "currencyValue" ? currency.toUpperCase() : field.toUpperCase()}
               </div>
             </div>
           ))}
