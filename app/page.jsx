@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const SATOSHI_PER_BTC = 100000000;
+
 const SUPPORTED_CURRENCIES = [
   { code: "usd", name: "US Dollar" },
   { code: "eur", name: "Euro" },
@@ -21,17 +23,18 @@ const SUPPORTED_CURRENCIES = [
 export default function AdvancedCryptoConverter() {
   const [values, setValues] = useState({ satoshi: "", bitcoin: "", currencyValue: "" });
   const [exchangeRate, setExchangeRate] = useState(0);
-  const [currency, setCurrency] = useState("usd");
+  const [currency, setCurrency] = useState(SUPPORTED_CURRENCIES[0]);
   const [lastUpdated, setLastUpdated] = useState(null);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const fetchExchangeRate = useCallback(async () => {
     try {
       const response = await fetch(
-        `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`
+        `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency.code}`
       );
       if (response.ok) {
         const data = await response.json();
-        setExchangeRate(data.bitcoin[currency]);
+        setExchangeRate(data.bitcoin[currency.code]);
         setLastUpdated(new Date().toLocaleString());
       }
     } catch (error) {
@@ -71,10 +74,10 @@ export default function AdvancedCryptoConverter() {
           <h1 className="text-4xl font-bold text-white mb-2">Crypto Converter</h1>
           <p className="text-white text-opacity-80 mb-6">Convert between Satoshi, Bitcoin, and currencies</p>
 
-          {["satoshi", "bitcoin", "currencyValue"].map((field, index) => (
+          {["satoshi", "bitcoin", "currencyValue"].map((field) => (
             <div key={field} className="mb-6 relative">
               <label htmlFor={field} className="block text-sm font-medium text-white mb-2">
-                {field === "currencyValue" ? currency.toUpperCase() : field.charAt(0).toUpperCase() + field.slice(1)}
+                {field === "currencyValue" ? currency.code.toUpperCase() : field.charAt(0).toUpperCase() + field.slice(1)}
               </label>
               <input
                 id={field}
@@ -85,32 +88,41 @@ export default function AdvancedCryptoConverter() {
                 className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-white placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
               />
               <div className="absolute right-3 top-10 text-white text-opacity-50">
-                {field === "currencyValue" ? currency.toUpperCase() : field.toUpperCase()}
+                {field === "currencyValue" ? currency.code.toUpperCase() : field.toUpperCase()}
               </div>
             </div>
           ))}
 
-          <div className="mb-4">
-            <label htmlFor="currency" className="block text-sm font-medium text-white mb-2">
-              Select Currency
-            </label>
-            <select
-              id="currency"
-              value={currency}
-              onChange={(e) => setCurrency(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
+          {/* Custom Dropdown */}
+          <div className="mb-6 relative">
+            <button
+              className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
+              onClick={() => setDropdownOpen(!isDropdownOpen)}
             >
-              {SUPPORTED_CURRENCIES.map(({ code, name }) => (
-                <option key={code} value={code}>
-                  {code.toUpperCase()} | {name}
-                </option>
-              ))}
-            </select>
+              {currency.code.toUpperCase()} | {currency.name}
+              {isDropdownOpen ? <ChevronUp className="ml-2 text-white" /> : <ChevronDown className="ml-2 text-white" />}
+            </button>
+            {isDropdownOpen && (
+              <div className="absolute z-10 mt-2 w-full bg-white bg-opacity-10 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+                {SUPPORTED_CURRENCIES.map((curr) => (
+                  <div
+                    key={curr.code}
+                    className="px-4 py-2 hover:bg-white hover:bg-opacity-20 cursor-pointer text-white"
+                    onClick={() => {
+                      setCurrency(curr);
+                      setDropdownOpen(false);
+                    }}
+                  >
+                    {curr.code.toUpperCase()} | {curr.name}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="mt-8 p-4 bg-white bg-opacity-10 rounded-lg">
             <p className="text-white text-sm">
-              Exchange Rate: 1 BTC = {exchangeRate.toLocaleString()} {currency.toUpperCase()}
+              Exchange Rate: 1 BTC = {exchangeRate.toLocaleString()} {currency.code.toUpperCase()}
             </p>
             <p className="text-white text-opacity-70 text-xs mt-1">Last updated: {lastUpdated}</p>
           </div>
