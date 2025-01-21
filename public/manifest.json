@@ -1,7 +1,7 @@
 {
   "name": "Satoshi Converter",
   "short_name": "Satoshi Converter",
-  "theme_color": "#B2B5E0",
+  "theme_color": "#AB9FF1",
   "display": "standalone",
   "start_url": "/",
   "icons": [
