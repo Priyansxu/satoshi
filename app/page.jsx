@@ -120,7 +120,7 @@ export default function AdvancedCryptoConverter() {
               {isDropdownOpen ? <ChevronUp className="ml-2 text-white" /> : <ChevronDown className="ml-2 text-white" />}
             </button>
             {isDropdownOpen && (
-              <div className="absolute z-10 mt-2 w-full bg-pink-400 bg-opacity-80 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+              <div className="absolute z-10 mt-2 w-full bg-pink-500 bg-opacity-50 rounded-lg shadow-lg max-h-48 overflow-y-auto">
                 {SUPPORTED_CURRENCIES.map((curr) => (
                   <div
                     key={curr.code}
