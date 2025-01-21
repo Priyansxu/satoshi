@@ -44,9 +44,26 @@ export default function AdvancedCryptoConverter() {
 
   useEffect(() => {
     fetchExchangeRate();
-    const interval = setInterval(fetchExchangeRate, 60000); // Update every minute
+    const interval = setInterval(fetchExchangeRate, 60000);
     return () => clearInterval(interval);
   }, [fetchExchangeRate]);
+
+  useEffect(() => {
+    if (values.satoshi) {
+      const btc = parseFloat(values.satoshi) / SATOSHI_PER_BTC;
+      setValues((prev) => ({
+        ...prev,
+        bitcoin: btc.toFixed(8),
+        currencyValue: (btc * exchangeRate).toFixed(2),
+      }));
+    } else if (values.bitcoin) {
+      setValues((prev) => ({
+        ...prev,
+        satoshi: Math.floor(parseFloat(values.bitcoin) * SATOSHI_PER_BTC).toString(),
+        currencyValue: (parseFloat(values.bitcoin) * exchangeRate).toFixed(2),
+      }));
+    }
+  }, [exchangeRate]);
 
   const handleChange = (field, value) => {
     const numValue = parseFloat(value) || 0;
@@ -96,7 +113,7 @@ export default function AdvancedCryptoConverter() {
           {/* Custom Dropdown */}
           <div className="mb-6 relative">
             <button
-              className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
+              className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-50 text-white text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
               onClick={() => setDropdownOpen(!isDropdownOpen)}
             >
               {currency.code.toUpperCase()} | {currency.name}
