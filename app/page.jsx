@@ -110,7 +110,6 @@ export default function AdvancedCryptoConverter() {
             </div>
           ))}
 
-          {/* Custom Dropdown */}
           <div className="mb-6 relative">
             <button
               className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
@@ -120,11 +119,11 @@ export default function AdvancedCryptoConverter() {
               {isDropdownOpen ? <ChevronUp className="ml-2 text-white" /> : <ChevronDown className="ml-2 text-white" />}
             </button>
             {isDropdownOpen && (
-              <div className="absolute z-10 mt-2 w-full bg-pink-500 bg-opacity-50 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+              <div className="absolute z-10 mt-2 w-full bg-pink-500 bg-opacity-50 rounded-lg shadow-lg max-h-48 overflow-y-auto backdrop-blur-lg">
                 {SUPPORTED_CURRENCIES.map((curr) => (
                   <div
                     key={curr.code}
-                    className="px-4 py-2 hover:bg-white hover:bg-opacity-20 cursor-pointer text-white backdrop-blur-2xl"
+                    className="px-4 py-2 hover:bg-white hover:bg-opacity-20 cursor-pointer text-white"
                     onClick={() => {
                       setCurrency(curr);
                       setDropdownOpen(false);
