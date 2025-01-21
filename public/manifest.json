@@ -1,0 +1,12 @@
+{
+  "name": "Satoshi Converter",
+  "short_name": "satoshi",
+  "theme_color": "#B2B5E0",
+  "display": "standalone",
+  "orientation": "any",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+   { "src": "", "type": "image/jpg", "sizes": "2248x2248" }
+  ]
+}
