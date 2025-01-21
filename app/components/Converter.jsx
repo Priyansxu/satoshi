@@ -86,7 +86,7 @@ export default function Converter() {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#AB9FF1] p-4">
-      <div className="w-full max-w-md backdrop-blur-lg bg-gradient-to-b from-white/20 to-transparent rounded-3xl overflow-hidden">
+      <div className="w-full max-w-md backdrop-blur-lg bg-white bg-opacity-20 rounded-3xl overflow-hidden">
         <div className="p-8">
           <h1 className="text-4xl font-bold text-white mb-2">Satoshi Converter</h1>
           <p className="text-white text-opacity-80 mb-6">Convert between Satoshi, Bitcoin, and currencies</p>
