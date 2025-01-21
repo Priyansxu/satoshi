@@ -85,7 +85,7 @@ export default function AdvancedCryptoConverter() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-purple-500 to-pink-500 p-4">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-[#B2B5E0] to-[#C5ADC5] p-4">
       <div className="w-full max-w-md backdrop-blur-lg bg-white bg-opacity-20 rounded-3xl shadow-2xl overflow-hidden">
         <div className="p-8">
           <h1 className="text-4xl font-bold text-white mb-2">Crypto Converter</h1>
@@ -119,7 +119,7 @@ export default function AdvancedCryptoConverter() {
               {isDropdownOpen ? <ChevronUp className="ml-2 text-white" /> : <ChevronDown className="ml-2 text-white" />}
             </button>
             {isDropdownOpen && (
-              <div className="absolute z-10 mt-2 w-full bg-pink-400 bg-opacity-50 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+              <div className="absolute z-10 mt-2 w-full bg-[#B2B5E0] bg-opacity-50 rounded-lg shadow-lg max-h-48 overflow-y-auto">
                 {SUPPORTED_CURRENCIES.map((curr) => (
                   <div
                     key={curr.code}
