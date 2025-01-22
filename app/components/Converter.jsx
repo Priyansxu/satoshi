@@ -85,7 +85,8 @@ export default function Converter() {
   };
 
   return (
-      <div className="w-full max-w-md backdrop-blur-lg bg-[#AB9FF1] bg-opacity-70 overflow-hidden outline-dashed outline-2 outline-offset-2 outline-[#AB9FF1]/60 rounded-2xl p-4">
+     <div className="p-4 flex justify-center items-center">
+      <div className="w-full max-w-md backdrop-blur-lg bg-[#AB9FF1] bg-opacity-70 overflow-hidden outline-dashed outline-2 outline-offset-2 outline-[#AB9FF1]/60 rounded-2xl">
         <div className="p-8">
           <h1 className="text-4xl font-bold font-mono text-white mb-8">Satoshi Converter</h1>
           {["satoshi", "bitcoin", "currencyValue"].map((field) => (
@@ -145,5 +146,6 @@ export default function Converter() {
           </button>
         </div>
       </div>
+    </div>
   );
 }
