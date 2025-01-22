@@ -87,8 +87,8 @@ export default function Converter() {
   return (
       <div className="w-full max-w-md backdrop-blur-lg bg-[#AB9FF1] bg-opacity-70 rounded-3xl overflow-hidden">
         <div className="p-8">
-          <h1 className="text-4xl font-bold text-[#3C315B] mb-2">Satoshi Converter</h1>
-          <p className="text-opacity-80 font-medium mb-6">Convert between Satoshi, Bitcoin, and currencies</p>
+          <h1 className="text-4xl font-bold font-mono text-[#3C315B] mb-2">Satoshi Converter</h1>
+          <p className="text-opacity-80 font-medium font-serif mb-6">Convert between Satoshi, Bitcoin, and currencies</p>
 
           {["satoshi", "bitcoin", "currencyValue"].map((field) => (
             <div key={field} className="mb-6 relative">
@@ -103,7 +103,7 @@ export default function Converter() {
                 placeholder={`Enter ${field}`}
                 className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 placeholder-white placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
               />
-              <div className="absolute right-3 top-10 text-white text-opacity-50">
+              <div className="absolute right-3 top-10 font-mono text-white text-opacity-50">
                 {field === "currencyValue" ? currency.code.toUpperCase() : field.toUpperCase()}
               </div>
             </div>
