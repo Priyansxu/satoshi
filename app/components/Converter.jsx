@@ -130,7 +130,7 @@ export default function Converter() {
             )}
           </div>
 
-          <div className="mt-8 p-4 bg-white bg-opacity-10 rounded-lg text-white/50">
+          <div className="mt-8 p-4 bg-white bg-opacity-10 rounded-lg text-white/70">
             <p className="text-sm">
               Exchange Rate: 1 BTC = {exchangeRate.toLocaleString()} {currency.code.toUpperCase()}
             </p>
