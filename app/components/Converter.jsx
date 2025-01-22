@@ -85,7 +85,6 @@ export default function Converter() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#AB9FF1] p-4">
       <div className="w-full max-w-md backdrop-blur-lg bg-white bg-opacity-20 rounded-3xl overflow-hidden">
         <div className="p-8">
           <h1 className="text-4xl font-bold text-white mb-2">Satoshi Converter</h1>
@@ -151,6 +150,5 @@ export default function Converter() {
           </button>
         </div>
       </div>
-    </div>
   );
 }
