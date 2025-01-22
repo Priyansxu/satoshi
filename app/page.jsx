@@ -6,7 +6,7 @@ export default function Page() {
   return (
   <div className="min-h-screen bg-[#F4F2FF] text-[#61577C]">
    <Header />
-   <DownArrow width={50} height={50} fill="#AB9FF1" />
+   <DownArrow width={200} height={200} fill="#AB9FF1" />
    <Converter />
   </div>
 );
