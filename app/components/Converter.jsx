@@ -130,11 +130,11 @@ export default function Converter() {
             )}
           </div>
 
-          <div className="mt-8 p-4 bg-white bg-opacity-10 rounded-lg text-white/70">
+          <div className="mt-8 p-4 bg-white bg-opacity-20 rounded-lg text-white/90">
             <p className="text-sm">
               Exchange Rate: 1 BTC = {exchangeRate.toLocaleString()} {currency.code.toUpperCase()}
             </p>
-            <p className="text-opacity-70 text-xs mt-1">Last updated: {lastUpdated}</p>
+            <p className="text-opacity-80 text-xs mt-1">Last updated: {lastUpdated}</p>
           </div>
 
           <button
