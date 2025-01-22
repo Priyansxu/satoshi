@@ -101,9 +101,9 @@ export default function Converter() {
                 value={values[field]}
                 onChange={(e) => handleChange(field, e.target.value)}
                 placeholder={`Enter ${field}`}
-                className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 placeholder-white placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
+                className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-white placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
               />
-              <div className="absolute right-3 top-10 font-mono text-white text-opacity-50">
+              <div className="absolute right-3 top-10 font-mono font-bold text-md text-white text-opacity-50">
                 {field === "currencyValue" ? currency.code.toUpperCase() : field.toUpperCase()}
               </div>
             </div>
@@ -118,7 +118,7 @@ export default function Converter() {
               {isDropdownOpen ? <ChevronUp className="ml-2 text-white" /> : <ChevronDown className="ml-2 text-white" />}
             </button>
             {isDropdownOpen && (
-              <div className="absolute z-10 mt-2 w-full bg-[#AB9FF1] bg-opacity-50 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+              <div className="absolute z-10 mt-2 w-full bg-[#AB9FF1] bg-opacity-80 rounded-lg shadow-lg max-h-48 overflow-y-auto">
                 {SUPPORTED_CURRENCIES.map((curr) => (
                   <div
                     key={curr.code}
