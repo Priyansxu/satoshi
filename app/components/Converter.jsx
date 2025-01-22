@@ -92,7 +92,7 @@ export default function Converter() {
 
           {["satoshi", "bitcoin", "currencyValue"].map((field) => (
             <div key={field} className="mb-6 relative">
-              <label htmlFor={field} className="block text-sm font-medium mb-2">
+              <label htmlFor={field} className="block text-sm font-bold mb-2">
                 {field === "currencyValue" ? currency.code.toUpperCase() : field.charAt(0).toUpperCase() + field.slice(1)}
               </label>
               <input
