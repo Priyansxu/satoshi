@@ -4,7 +4,7 @@ import DownArrow from "@/components/DownArrow";
 
 export default function Page() {
   return (
-  <div className="min-h-screen bg-white/10 text-[#61577C] backdrop-blur-2xl">
+  <div className="min-h-screen bg-white/10 text-[#61577C] backdrop-blur-md">
    <Header />
    <DownArrow width={200} height={200} fill="#AB9FF1" />
    <Converter />
