@@ -100,7 +100,7 @@ export default function Converter() {
                 placeholder={`Enter ${field}`}
                 className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-white placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
               />
-              <div className="absolute right-3 top-2 font-mono font-bold text-md text-white text-opacity-50">
+              <div className="absolute right-3 top-3 font-mono font-bold text-md text-white text-opacity-50">
                 {field === "currencyValue" ? currency.code.toUpperCase() : field.toUpperCase()}
               </div>
             </div>
