@@ -111,7 +111,7 @@ export default function Converter() {
 
           <div className="mb-6 relative">
             <button
-              className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
+              className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
               onClick={() => setDropdownOpen(!isDropdownOpen)}
             >
               {currency.code.toUpperCase()} | {currency.name}
@@ -135,7 +135,7 @@ export default function Converter() {
             )}
           </div>
 
-          <div className="mt-8 p-4 bg-white bg-opacity-10 rounded-lg">
+          <div className="mt-8 p-4 bg-white bg-opacity-10 rounded-lg text-white">
             <p className="text-sm">
               Exchange Rate: 1 BTC = {exchangeRate.toLocaleString()} {currency.code.toUpperCase()}
             </p>
@@ -144,7 +144,7 @@ export default function Converter() {
 
           <button
             onClick={fetchExchangeRate}
-            className="mt-6 w-full bg-white bg-opacity-20 hover:bg-opacity-30 font-bold py-3 px-4 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+            className="mt-6 w-full bg-white text-white bg-opacity-20 hover:bg-opacity-30 font-bold py-3 px-4 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
           >
             Refresh Rate
           </button>
