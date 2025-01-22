@@ -85,9 +85,9 @@ export default function Converter() {
   };
 
   return (
-      <div className="w-full max-w-md backdrop-blur-lg bg-[#AB9FF1] bg-opacity-70 rounded-md overflow-hidden">
+      <div className="w-full max-w-md backdrop-blur-lg bg-[#AB9FF1] bg-opacity-70 overflow-hidden">
         <div className="p-8">
-          <h1 className="text-4xl font-bold font-mono bg-gradient-to-b from-[#3C315B]/70 to-transparent mb-8">Satoshi Converter</h1>
+          <h1 className="text-4xl font-bold font-mono text-gradient-to-b from-[#3C315B]/70 to-transparent mb-8">Satoshi Converter</h1>
           {["satoshi", "bitcoin", "currencyValue"].map((field) => (
             <div key={field} className="mb-6 relative">
               <input
