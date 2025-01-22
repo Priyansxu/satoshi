@@ -117,7 +117,7 @@ export default function Converter() {
                 {SUPPORTED_CURRENCIES.map((curr) => (
                   <div
                     key={curr.code}
-                    className="px-4 py-2 hover:bg-white hover:bg-opacity-20 cursor-pointer text-white"
+                    className="px-4 py-2 hover:bg-white hover:bg-opacity-20 cursor-pointer text-white/50"
                     onClick={() => {
                       setCurrency(curr);
                       setDropdownOpen(false);
@@ -130,7 +130,7 @@ export default function Converter() {
             )}
           </div>
 
-          <div className="mt-8 p-4 bg-white bg-opacity-10 rounded-lg text-white">
+          <div className="mt-8 p-4 bg-white bg-opacity-10 rounded-lg text-white/50">
             <p className="text-sm">
               Exchange Rate: 1 BTC = {exchangeRate.toLocaleString()} {currency.code.toUpperCase()}
             </p>
