@@ -88,11 +88,11 @@ export default function Converter() {
       <div className="w-full max-w-md backdrop-blur-lg bg-[#AB9FF1] bg-opacity-90 rounded-3xl overflow-hidden">
         <div className="p-8">
           <h1 className="text-4xl font-bold text-[#3C315B] mb-2">Satoshi Converter</h1>
-          <p className="text-white text-opacity-80 mb-6">Convert between Satoshi, Bitcoin, and currencies</p>
+          <p className="text-opacity-80 mb-6">Convert between Satoshi, Bitcoin, and currencies</p>
 
           {["satoshi", "bitcoin", "currencyValue"].map((field) => (
             <div key={field} className="mb-6 relative">
-              <label htmlFor={field} className="block text-sm font-medium text-white mb-2">
+              <label htmlFor={field} className="block text-sm font-medium mb-2">
                 {field === "currencyValue" ? currency.code.toUpperCase() : field.charAt(0).toUpperCase() + field.slice(1)}
               </label>
               <input
@@ -101,7 +101,7 @@ export default function Converter() {
                 value={values[field]}
                 onChange={(e) => handleChange(field, e.target.value)}
                 placeholder={`Enter ${field}`}
-                className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-white placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
+                className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 placeholder-white placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
               />
               <div className="absolute right-3 top-10 text-white text-opacity-50">
                 {field === "currencyValue" ? currency.code.toUpperCase() : field.toUpperCase()}
@@ -111,7 +111,7 @@ export default function Converter() {
 
           <div className="mb-6 relative">
             <button
-              className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
+              className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-200"
               onClick={() => setDropdownOpen(!isDropdownOpen)}
             >
               {currency.code.toUpperCase()} | {currency.name}
@@ -136,15 +136,15 @@ export default function Converter() {
           </div>
 
           <div className="mt-8 p-4 bg-white bg-opacity-10 rounded-lg">
-            <p className="text-white text-sm">
+            <p className="text-sm">
               Exchange Rate: 1 BTC = {exchangeRate.toLocaleString()} {currency.code.toUpperCase()}
             </p>
-            <p className="text-white text-opacity-70 text-xs mt-1">Last updated: {lastUpdated}</p>
+            <p className="text-opacity-70 text-xs mt-1">Last updated: {lastUpdated}</p>
           </div>
 
           <button
             onClick={fetchExchangeRate}
-            className="mt-6 w-full bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-3 px-4 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+            className="mt-6 w-full bg-white bg-opacity-20 hover:bg-opacity-30 font-bold py-3 px-4 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
           >
             Refresh Rate
           </button>
