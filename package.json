@@ -13,6 +13,7 @@
     "tailwindcss": "3.4.17",
     "autoprefixer": "latest",
     "postcss": "latest",
-    "lucide-react": "latest"
+    "lucide-react": "latest",
+    "next-pwa": "latest"
   }
 }
