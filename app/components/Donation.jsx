@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Copy, Bitcoin } from 'lucide-react';
 
-const DonationComponent = () => {
+export default function DonationComponent() {
   const [copiedSpeed, setCopiedSpeed] = useState(false);
   const [copiedZbd, setCopiedZbd] = useState(false);
   const [copiedBitcoin, setCopiedBitcoin] = useState(false);
@@ -36,8 +36,8 @@ const DonationComponent = () => {
 
   const WalletAddressBlock = ({ address, copiedState, type }) => (
     <div className="mb-4 relative">
-      <div className="w-full px-4 py-3 rounded-lg bg-[#ab9ff1]/20 text-white flex items-center justify-between backdrop-blur-md">
-        <span className="font-mono text-sm text-[#ab9ff1]">{address}</span>
+      <div className="w-full px-4 py-3 rounded-lg bg-[#ab9ff1]/20 text-white flex items-center justify-between backdrop-blur-md overflow-x-auto">
+        <span className="font-mono text-sm text-[#ab9ff1] break-all">{address}</span>
         <button 
           onClick={() => handleCopy(type)}
           className="focus:outline-none"
@@ -68,7 +68,7 @@ const DonationComponent = () => {
           <h1 className="text-4xl font-bold font-mono mb-8 text-left text-[#ab9ff1]">
             Donate Bitcoin
           </h1>
-          
+
           <div className="rounded-2xl p-4 bg-[#ab9ff1]/10 border border-[#ab9ff1]/30">
             <h2 className="text-lg font-semibold mb-4 text-center text-[#ab9ff1]">
               Lightning Wallets
@@ -84,7 +84,7 @@ const DonationComponent = () => {
               type="speed"
             />
           </div>
-          
+
           <div className="p-8 pt-4">
             <div className="mb-4 text-center text-[#ab9ff1]">
               <h3 className="text-2xl font-bold tracking-wider uppercase">
@@ -104,6 +104,4 @@ const DonationComponent = () => {
       </div>
     </div>
   );
-};
-
-export default DonationComponent;
+}
