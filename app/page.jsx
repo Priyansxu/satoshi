@@ -7,9 +7,16 @@ import Donation from "@/components/Donation";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white/10 text-[#61577C]">
+    <div className="min-h-screen bg-white/10 text-[#61577C] flex flex-col items-center justify-center px-6">
       <Header />
-      <h1 className="text-lg font-bold tracking-tight text-gradient-to-br from-[#AB9FF1] to-white">Convert Sats <br /><span className="text-white">between Bitcoin and Currencies</span></h1>
+      <div className="mt-16 mb-8 p-6 bg-white/20 backdrop-blur-md rounded-lg shadow-lg text-center max-w-4xl">
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-br from-[#AB9FF1] to-[#F4F2FF] text-transparent bg-clip-text mb-4">
+          Convert Sats
+        </h1>
+        <p className="text-2xl font-semibold text-[#F4F2FF]">
+          Between Bitcoin and Currencies
+        </p>
+      </div>
       <DownArrow width={200} height={200} fill="#AB9FF1" />
       <Converter />
       <Donation />
