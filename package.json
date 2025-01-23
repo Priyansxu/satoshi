@@ -10,10 +10,9 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "tailwindcss": "latest",
+    "tailwindcss": "3.4.17",
     "autoprefixer": "latest",
     "postcss": "latest",
-    "lucide-react": "latest",
-    "@tailwindcss/postcss": "latest"
+    "lucide-react": "latest"
   }
 }
