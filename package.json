@@ -13,6 +13,7 @@
     "tailwindcss": "latest",
     "autoprefixer": "latest",
     "postcss": "latest",
-    "lucide-react": "latest"
+    "lucide-react": "latest",
+    "@tailwindcss/postcss"
   }
 }
