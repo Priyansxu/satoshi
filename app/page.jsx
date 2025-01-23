@@ -1,5 +1,3 @@
-"use client";
-
 import Header from "@/components/Header";
 import DownArrow from "@/components/DownArrow";
 import Converter from "@/components/Converter";
