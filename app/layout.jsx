@@ -2,7 +2,7 @@ import './globals.css';
 
 export const metadata = {
   title: 'Satoshi Converter',
-  description: 'Converte Satoshi into Bitcoin and other currency.',
+  description: 'Convert Satoshi into Bitcoin and other currency.',
   themeColor: '#f4f2ff',
   icons: '/logo.jpg',
 };
