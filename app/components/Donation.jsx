@@ -2,8 +2,8 @@ import Image from "next/image"
 
 export default function Donation() {
   return (
-    <div className="bg-[#f4f2ff] p-6 rounded-lg shadow-lg max-w-md mx-auto">
-      <h2 className="text-2xl font-bold mb-4 text-[#ab9ff1]">Donation</h2>
+     <div className="p-4 flex justify-center items-center">
+      <h2 className="text-2xl font-bold mb-4 text-[#ab9ff1]">Donate to the developer</h2>
       <div className="space-y-4">
         <div className="flex items-center space-x-4">
           <Image src="/speed.svg" alt="Speed Logo" width={24} height={24} />
