@@ -36,7 +36,7 @@ const DonationComponent = () => {
 
   const WalletAddressBlock = ({ address, copiedState, type }) => (
     <div className="mb-4 relative">
-      <div className="w-full px-4 py-3 rounded-lg bg-[#ab9ff1]/20 text-white flex items-center justify-between">
+      <div className="w-full px-4 py-3 rounded-lg bg-[#ab9ff1]/20 text-white flex items-center justify-between backdrop-blur-md">
         <span className="font-mono text-sm text-[#ab9ff1]">{address}</span>
         <button 
           onClick={() => handleCopy(type)}
