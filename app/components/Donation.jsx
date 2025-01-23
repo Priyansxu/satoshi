@@ -3,6 +3,7 @@ import Image from "next/image"
 export default function Donation() {
   return (
      <div className="p-4 flex justify-center items-center">
+      <div className="w-full max-w-md backdrop-blur-lg bg-[#AB9FF1] bg-opacity-70 overflow-hidden outline-dashed outline-2 outline-offset-2 outline-[#AB9FF1]/60 rounded-2xl">
       <h2 className="text-2xl font-bold mb-4 text-[#ab9ff1]">Donate to the developer</h2>
       <div className="space-y-4">
         <div className="flex items-center space-x-4">
@@ -21,5 +22,6 @@ export default function Donation() {
         </code>
       </div>
     </div>
+   </div>
   )
 }
