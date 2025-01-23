@@ -6,22 +6,22 @@ const DonationComponent = () => {
   const [copiedZbd, setCopiedZbd] = useState(false);
   const [copiedBitcoin, setCopiedBitcoin] = useState(false);
 
-  const speedWallet = 'priyansxu@speed.app';
   const zbdWallet = 'priyansxu@zbd.gg';
-  const bitcoinAddress = 'bc1qexample123456789';
+  const speedWallet = 'priyansxu@speed.app';
+  const bitcoinAddress = 'bc1qprhp4qtsdnhyxa6rgexpqgna3g9ewrh05fxr90';
 
   const handleCopy = (type) => {
     let addressToCopy = '';
     let setCopiedFunction = null;
 
     switch(type) {
-      case 'speed':
-        addressToCopy = speedWallet;
-        setCopiedFunction = setCopiedSpeed;
-        break;
       case 'zbd':
         addressToCopy = zbdWallet;
         setCopiedFunction = setCopiedZbd;
+        break;
+      case 'speed':
+        addressToCopy = speedWallet;
+        setCopiedFunction = setCopiedSpeed;
         break;
       case 'bitcoin':
         addressToCopy = bitcoinAddress;
@@ -65,7 +65,7 @@ const DonationComponent = () => {
     <div className="p-4 flex justify-center items-center">
       <div className="w-full max-w-md backdrop-blur-lg overflow-hidden outline-dashed outline-2 outline-offset-2 rounded-2xl space-y-4 bg-[#f4f2ff] border-[#ab9ff1] outline-[#ab9ff1]">
         <div className="p-8 pb-0">
-          <h1 className="text-4xl font-bold font-mono mb-8 text-center text-[#ab9ff1]">
+          <h1 className="text-4xl font-bold font-mono mb-8 text-right text-[#ab9ff1]">
             Donate Bitcoin
           </h1>
           
@@ -74,15 +74,14 @@ const DonationComponent = () => {
               Lightning Wallets
             </h2>
             <WalletAddressBlock 
-              address={speedWallet} 
-              copiedState={copiedSpeed} 
-              type="speed"
-            />
-            
-            <WalletAddressBlock 
               address={zbdWallet} 
               copiedState={copiedZbd} 
               type="zbd"
+            />
+            <WalletAddressBlock 
+              address={speedWallet} 
+              copiedState={copiedSpeed} 
+              type="speed"
             />
           </div>
           
