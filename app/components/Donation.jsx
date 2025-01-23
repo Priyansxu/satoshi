@@ -65,7 +65,7 @@ const DonationComponent = () => {
     <div className="p-4 flex justify-center items-center">
       <div className="w-full max-w-md backdrop-blur-lg overflow-hidden outline-dashed outline-2 outline-offset-2 rounded-2xl space-y-4 bg-[#f4f2ff] border-[#ab9ff1] outline-[#ab9ff1]/60">
         <div className="p-8 pb-0">
-          <h1 className="text-4xl font-bold font-mono mb-8 text-right text-[#ab9ff1]">
+          <h1 className="text-4xl font-bold font-mono mb-8 text-left text-[#ab9ff1]">
             Donate Bitcoin
           </h1>
           
