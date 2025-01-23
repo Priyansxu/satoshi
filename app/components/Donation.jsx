@@ -20,7 +20,7 @@ export default function Donation() {
 
   const WalletBlock = ({ address, copiedState, type }) => (
     <div className="relative mb-4">
-      <div className="w-full px-4 py-3 rounded-lg bg-purple-100/20 text-purple-400 flex items-center justify-between">
+      <div className="w-full px-4 py-3 rounded-lg bg-white/20 text-[#ab9ff1] flex items-center justify-between">
         <span className="font-mono text-sm">{address}</span>
         <button onClick={() => handleCopy(type)} className="focus:outline-none">
           <Copy className="opacity-50 hover:opacity-100 transition-opacity" size={20} />
@@ -28,7 +28,7 @@ export default function Donation() {
       </div>
       {copiedState && (
         <div className="absolute inset-x-0 bottom-[-22px] text-center">
-          <span className="text-xs px-2 py-1 rounded-full bg-purple-100/20 text-purple-400">
+          <span className="text-xs px-2 py-1 rounded-full bg-[#f4f2ff]/30 text-[#f4f2ff]">
             Copied!
           </span>
         </div>
