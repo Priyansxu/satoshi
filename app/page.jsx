@@ -1,7 +1,7 @@
 "use client";
 
 import Header from "@/components/Header";
-import Header from "@/components/Header";
+import Intro from "@/components/Intro";
 import DownArrow from "@/components/DownArrow";
 import Converter from "@/components/Converter";
 import Donation from "@/components/Donation";
