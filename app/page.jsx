@@ -7,9 +7,9 @@ import Donation from "@/components/Donation";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white/10 text-[#61577C]">
+    <div className="min-h-screen bg-white/10 text-[#61577C] flex flex-col items-center justify-center">
       <Header />
-      <div className="bg-white/40 rounded-lg p-6 mt-10 w-full max-w-md text-center justify-center items-center">
+      <div className="bg-white/40 rounded-lg p-6 mt-10 w-full max-w-md text-center">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-br from-[#AB9FF1] to-[#F4F2FF] text-transparent bg-clip-text">
           Convert Sats
         </h1>
