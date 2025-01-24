@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-white/10 text-[#61577C]">
       <Header />
-      <div className="bg-white/50 backdrop-blur-md rounded-lg p-6 mt-10 max-w-md text-center mx-4">
+      <div className="bg-white/50 backdrop-blur-md rounded-lg p-6 mt-10 w-full max-w-md text-center">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-br from-[#AB9FF1] to-[#F4F2FF] text-transparent bg-clip-text">
           Convert Sats
         </h1>
