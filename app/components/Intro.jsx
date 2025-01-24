@@ -1,5 +1,5 @@
 export default function Intro() {
-return (
+  return (
      <div className="flex flex-col items-center justify-center">
       <div className="bg-white/40 rounded-lg p-6 mt-10 w-full max-w-md text-center">
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-br from-[#AB9FF1] to-[#F4F2FF] text-transparent bg-clip-text">
