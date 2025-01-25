@@ -1,14 +1,12 @@
 export default function Intro() {
   return (
      <div className="flex flex-col items-center justify-center">
-      <div className="bg-gradient-b from-transparent to-white rounded-lg p-4 mx-4 mt-12 w-full max-w-md text-center border-2 border-[#ab9ff1]/40">
-        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-br from-[#AB9FF1] to-[#F4F2FF] text-transparent bg-clip-text">
+        <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-br from-[#AB9FF1] to-[#F4F2FF] text-transparent bg-clip-text mx-8 mt-6">
           Convert Sats
         </h1>
         <p className="mt-2 text-xl font-semibold text-gray-800/50 font-mono">
           Between Bitcoin and Currencies
         </p>
-      </div>
-   </div>
+    </div>
  );
 }
