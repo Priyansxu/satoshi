@@ -4,7 +4,7 @@ export default function Intro() {
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-br from-[#AB9FF1] to-[#F4F2FF] text-transparent bg-clip-text mx-8 mt-6">
           Convert Sats
         </h1>
-        <p className="mt-2 text-xl font-semibold text-gray-800/50 font-mono">
+        <p className="mx-8 mt-2 text-md font-semibold text-gray-800/50 font-mono">
           Between Bitcoin and Currencies
         </p>
     </div>
