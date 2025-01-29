@@ -12,7 +12,7 @@ export default function Page() {
     <>
       <Head>
         <title>Satoshi Calculator</title>
-        <meta name="description" content="Bitcoin Unit Converter: Convert between Satoshi, Bitcoin, and major currencies instantly" />
+        <meta name="description" content="Bitcoin Unit Converter: Accurately convert between Satoshi, Bitcoin, and major currencies with precise and real-time rates." />
         <meta name="theme-color" content="#AB9FF1" />
         <link rel="icon" href="/logo.jpg" />
       </Head>
