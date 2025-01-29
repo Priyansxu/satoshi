@@ -2,7 +2,7 @@ import './globals.css';
 
 export const metadata = {
   title: 'Satoshi Converter',
-  description: 'Bitcoin Unit Converter: Convert between Satoshi, Bitcoin, and major currencies instantly',
+  description: 'Bitcoin Unit Converter: Accurately convert between Satoshi, Bitcoin, and major currencies with precise and real-time rates.',
   themeColor: '#f4f2ff',
   icons: '/logo.jpg',
 };
