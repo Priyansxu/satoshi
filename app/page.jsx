@@ -6,6 +6,7 @@ import Intro from "@/components/Intro";
 import DownArrow from "@/components/DownArrow";
 import Converter from "@/components/Converter";
 import Donation from "@/components/Donation";
+import Earn from "@/components/Earn";
 
 export default function Page() {
   return (
@@ -22,6 +23,7 @@ export default function Page() {
         <DownArrow width={200} height={200} fill="#AB9FF1" />
         <Converter />
         <Donation />
+        <Earn />
       </div>
     </>
   );
