@@ -9,7 +9,7 @@ export default function Earn() {
           <h1 className="text-4xl font-bold font-mono text-white mb-8">Earn Bitcoin</h1>
           
           <div className="mb-6 bg-white bg-opacity-10 p-6 rounded-lg font-mono">
-            <p className="text-white text-lg mb-6">
+            <p className="text-white text-sm mb-6">
               Start earning Bitcoin rewards for every spin with The Bitcoin App
             </p>
             
@@ -17,7 +17,7 @@ export default function Earn() {
               href="https://bitcoinapp.page.link/wcDmEAdEVP8eWaHS9"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between w-full bg-white bg-opacity-15 hover:bg-opacity-30 text-white p-4 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+              className="group flex items-center justify-between w-full bg-white bg-opacity-15 hover:bg-opacity-30 text-white font-sans p-4 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
             >
               <span className="font-bold">Join with my invite link</span>
               <ArrowRight className="transition-transform group-hover:translate-x-1" />
