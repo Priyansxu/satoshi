@@ -8,7 +8,7 @@ export default function DonationComponent() {
 
   const zbdWallet = 'priyansxu@zbd.gg';
   const speedWallet = 'priyansxu@speed.app';
-  const bitcoinAddress = 'bc1qprhp4qtsdnhyxa6rgexpqgna3g9ewrh05fxr90';
+  const bitcoinAddress = 'bc1q3pynlfmrhqdm8mjtn2f796gyv38ncx6q8mpapr';
 
   const handleCopy = (type) => {
     let addressToCopy = '';
@@ -71,17 +71,17 @@ export default function DonationComponent() {
 
           <div className="rounded-2xl p-4 bg-[#ab9ff1]/10 border border-[#ab9ff1]/30">
             <h2 className="text-lg font-semibold mb-4 text-center text-[#ab9ff1]">
-              Lightning Wallets
+              Lightning Address
             </h2>
-            <WalletAddressBlock 
-              address={zbdWallet} 
-              copiedState={copiedZbd} 
-              type="zbd"
-            />
             <WalletAddressBlock 
               address={speedWallet} 
               copiedState={copiedSpeed} 
               type="speed"
+            />
+            <WalletAddressBlock 
+              address={zbdWallet} 
+              copiedState={copiedZbd} 
+              type="zbd"
             />
           </div>
 
