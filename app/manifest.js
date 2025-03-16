@@ -5,7 +5,7 @@ export default function manifest() {
     description: 'Convert Sats between BTC and other currencies.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#ffffff',
+    background_color: '#AB9FF1',
     theme_color: '#ffffff',
     icons: [
       {
