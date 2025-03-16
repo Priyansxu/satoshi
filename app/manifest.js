@@ -1,0 +1,18 @@
+export default function manifest() {
+  return {
+    name: 'Satoshi Converter',
+    short_name: 'Satoshi Converter',
+    description: 'Convert Sats between BTC and other currencies.',
+    start_url: '/',
+    display: 'standalone',
+    background_color: '#ffffff',
+    theme_color: '#ffffff',
+    icons: [
+      {
+        src: '/icon.png',
+        sizes: 'any',
+        type: 'image/png',
+      },
+    ],
+  }
+}
