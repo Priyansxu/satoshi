@@ -7,7 +7,7 @@ export default function DonationComponent() {
   const [copiedBitcoin, setCopiedBitcoin] = useState(false);
 
   const speedWallet = 'priyansxu@speed.app';
-  const bitcoinAddress = 'bc1q3pynlfmrhqdm8mjtn2f796gyv38ncx6q8mpapr';
+  const bitcoinAddress = 'bc1qgzxc7u9eja6zse5nqzg43c8rx2j8ylp8e78xhr';
 
   const handleCopy = (type) => {
     let addressToCopy = '';
