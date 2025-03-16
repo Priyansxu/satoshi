@@ -6,7 +6,6 @@ export default function DonationComponent() {
   const [copiedZbd, setCopiedZbd] = useState(false);
   const [copiedBitcoin, setCopiedBitcoin] = useState(false);
 
-  const zbdWallet = 'priyansxu@zbd.gg';
   const speedWallet = 'priyansxu@speed.app';
   const bitcoinAddress = 'bc1q3pynlfmrhqdm8mjtn2f796gyv38ncx6q8mpapr';
 
@@ -15,10 +14,6 @@ export default function DonationComponent() {
     let setCopiedFunction = null;
 
     switch(type) {
-      case 'zbd':
-        addressToCopy = zbdWallet;
-        setCopiedFunction = setCopiedZbd;
-        break;
       case 'speed':
         addressToCopy = speedWallet;
         setCopiedFunction = setCopiedSpeed;
@@ -78,21 +73,13 @@ export default function DonationComponent() {
               copiedState={copiedSpeed} 
               type="speed"
             />
-            <WalletAddressBlock 
-              address={zbdWallet} 
-              copiedState={copiedZbd} 
-              type="zbd"
-            />
           </div>
 
           <div className="p-8 pt-4">
             <div className="mb-4 text-center text-[#ab9ff1]">
-              <h3 className="text-2xl font-bold tracking-wider uppercase">
+              <h2 className="text-2xl font-bold tracking-wider uppercase">
                 Mainnet
-              </h3>
-              <p className="text-xs font-mono opacity-70 tracking-widest text-[#ab9ff1]">
-                Bitcoin Native Segwit Address
-              </p>
+              </h2>
             </div>
             <WalletAddressBlock 
               address={bitcoinAddress} 
