@@ -23,8 +23,8 @@ export default function Page() {
         <Intro />
         <DownArrow width={200} height={200} fill="#AB9FF1" />
         <Converter />
-        <Donation />
-        <Earn />
+      //  <Donation />
+      //  <Earn />
       </div>
     </>
   );
